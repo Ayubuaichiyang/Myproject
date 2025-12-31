@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_eat"
+        android:title="吃什么"
+        android:icon="@android:drawable/ic_menu_today"/>
+
+    <item
+        android:id="@+id/nav_diary"
+        android:title="美食日记"
+        android:icon="@android:drawable/ic_menu_edit"/>
+
+</menu>

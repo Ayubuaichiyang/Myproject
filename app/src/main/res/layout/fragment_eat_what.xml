@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+<!--    <LinearLayout-->
+<!--        -->
+<!--        -->
+<!--    </LinearLayout>-->
+
+    <!-- 菜品转盘 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/food_title"
+            android:text="今天吃什么"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 转盘展示区 - 方形容器 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp">
+
+            <!-- 圆形转盘 -->
+            <com.xuyang.a202305100227.Myproject.WheelView
+                android:id="@+id/wheel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:rotation="0"/>
+
+            <!-- 中心参考点 -->
+            <View
+                android:id="@+id/center_reference"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"/>
+
+            <!-- 指针 -->
+            <View
+                android:id="@+id/pointer"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/center_reference"
+                android:background="@drawable/red_triangle_pointer"
+                android:transformPivotX="15dp"
+                android:transformPivotY="40dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/wheel_lottery_btn"
+            android:text="开始转盘"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
