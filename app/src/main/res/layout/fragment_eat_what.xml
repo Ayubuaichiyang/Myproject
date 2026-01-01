@@ -2,12 +2,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F5F5F5"
     android:gravity="center_horizontal">
 
-<!--    <LinearLayout-->
-<!--        -->
-<!--        -->
-<!--    </LinearLayout>-->
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="316dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:inAnimation="@anim/scale_in"
+        android:outAnimation="@anim/slide_out_left">
+
+        <TextView
+            android:id="@+id/frontText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="今天在哪吃"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner_bg"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/backText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="今天在家吃"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner_bg_green"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/thirdText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="今天出去吃"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner_bg_yellow"
+            android:padding="16dp"/>
+    </ViewFlipper>
+
+    <!-- 两个按钮 -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_option1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="在家吃"
+            android:backgroundTint="#96CEB4"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btn_option2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="出去吃"
+            android:backgroundTint="#FFEAA7"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
 
     <!-- 菜品转盘 -->
     <LinearLayout

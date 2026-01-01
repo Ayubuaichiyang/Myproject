@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import android.widget.Button
 import android.widget.TextView
+import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import kotlin.random.Random
+import com.xuyang.a202305100227.Myproject.EatAtHomeFragment
+import com.xuyang.a202305100227.Myproject.EatOutFragment
 
 class EatWhatFragment : Fragment() {
 
@@ -17,6 +20,10 @@ class EatWhatFragment : Fragment() {
     private lateinit var pointer: View
     private lateinit var lotteryButton: Button
     private lateinit var foodTitle: TextView
+    private lateinit var viewFlipper: ViewFlipper
+    private lateinit var thirdText: TextView
+    private lateinit var btnOption1: Button
+    private lateinit var btnOption2: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,11 +40,35 @@ class EatWhatFragment : Fragment() {
         pointer = view.findViewById(R.id.pointer)
         lotteryButton = view.findViewById(R.id.wheel_lottery_btn)
         foodTitle = view.findViewById(R.id.food_title)
+        viewFlipper = view.findViewById(R.id.viewFlipper)
+        thirdText = view.findViewById(R.id.thirdText)
+        btnOption1 = view.findViewById(R.id.btn_option1)
+        btnOption2 = view.findViewById(R.id.btn_option2)
         foodTitle.text = "今天吃什么"
 
         lotteryButton.setOnClickListener {
             startLottery()
         }
+
+        viewFlipper.setOnClickListener {
+            val randomChoice = Random.nextBoolean()
+            viewFlipper.displayedChild = if (randomChoice) 1 else 2
+        }
+
+        btnOption1.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EatAtHomeFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        btnOption2.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EatOutFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
     }
 
     private fun startLottery() {

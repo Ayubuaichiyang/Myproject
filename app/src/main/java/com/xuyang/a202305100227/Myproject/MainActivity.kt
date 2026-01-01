@@ -36,10 +36,12 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_eat -> {
                     replaceFragment(EatWhatFragment())
+                    showBottomNavigation()
                     true
                 }
                 R.id.nav_diary -> {
                     replaceFragment(FoodDiaryFragment())
+                    showBottomNavigation()
                     true
                 }
                 else -> false
@@ -51,5 +53,13 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+
+    fun hideBottomNavigation() {
+        bottomNavigation.visibility = android.view.View.GONE
+    }
+
+    fun showBottomNavigation() {
+        bottomNavigation.visibility = android.view.View.VISIBLE
     }
 }
