@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5">
 
+    <!-- 顶部标题栏 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -36,30 +38,337 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <!-- 食材选择滚动区域 -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 叶菜类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="叶菜类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/leaf_vegetables_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 根茎类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="根茎类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/root_vegetables_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 瓜茄类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="瓜茄类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/melon_eggplant_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 菌菇类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="菌菇类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/mushroom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 豆制品类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="豆制品类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/bean_product_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 主食类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="主食类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/staple_food_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 猪肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="猪肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/pork_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 牛肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="牛肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/beef_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 羊肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="羊肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/lamb_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 鸡肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="鸡肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/chicken_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 鸭肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="鸭肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/duck_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 肉制品类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="肉制品类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/meat_product_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 其他肉类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="其他肉类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/other_meat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 淡水水产类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="淡水水产类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/freshwater_seafood_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 海水水产类 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="海水水产类"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/seawater_seafood_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 烹饪工具 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="烹饪工具"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/cooker_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:alignItems="center"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 底部固定区域：按钮 + 食谱显示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center">
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="在家吃"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="这里可以添加在家吃的相关功能"
+        <!-- 提交按钮 -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="生成食谱"
             android:textSize="16sp"
-            android:textColor="#666666"
-            android:gravity="center" />
+            android:backgroundTint="#96CEB4"
+            android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/recipe_result_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="暂无食谱，请选择食材后点击生成"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:lineSpacingExtra="4dp"/>
 
     </LinearLayout>
 
