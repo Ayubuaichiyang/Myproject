@@ -1,11 +1,12 @@
-package com.xuyang.a202305100227.Myproject
+package com.xuyang.a202305100227.Myproject.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.xuyang.a202305100227.Myproject.databinding.ItemEatOutBinding // 关键：改为ItemEatOutBinding
+import com.xuyang.a202305100227.Myproject.ShopModel
+import com.xuyang.a202305100227.Myproject.databinding.ItemEatOutBinding
 
 /**
  * 极简版适配器：仅支持地图图标点击 + 基础数据展示
@@ -28,7 +29,7 @@ class ShopAdapter : ListAdapter<ShopModel, ShopAdapter.ShopViewHolder>(ShopDiffC
             binding.tvAddress.text = "${shop.province} ${shop.city} ${shop.area} ${shop.address}"
             binding.tvName.text = shop.name
 
-            // 2. 地图图标点击事件
+            // 2. 地图图标点击事件 - 传递完整的shop信息
             binding.ibLocation.setOnClickListener {
                 onLocationIconClick?.invoke(shop)
             }

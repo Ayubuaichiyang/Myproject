@@ -1,5 +1,7 @@
 package com.xuyang.a202305100227.Myproject
 
+import android.content.Intent
+//import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.xuyang.a202305100227.Myproject.ViewModel.RunWorkflow
+import com.xuyang.a202305100227.Myproject.adapter.ShopAdapter
+import com.xuyang.a202305100227.Myproject.utils.LocationUtils
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -140,16 +144,21 @@ class EatOutFragment : Fragment() {
         shopAdapter = ShopAdapter()
         rvAddress.adapter = shopAdapter
 
-        // 3. 定位图标点击回调（扩展：可跳转到地图）
+        // 3. 定位图标点击回调（跳转到地图页面）
         shopAdapter.setOnLocationIconClickListener { shop ->
-            Toast.makeText(
-                context,
-                "已定位到：${shop.name}（${shop.location}）",
-                Toast.LENGTH_SHORT
-            ).show()
-            // 可扩展：调用系统地图打开经纬度
-            // val uri = Uri.parse("geo:${shop.location.replace(",", ",")}?q=${shop.name}")
-            // startActivity(Intent(Intent.ACTION_VIEW, uri))
+            // 校验商家位置信息
+            if (shop.location.isEmpty()) {
+                Toast.makeText(context, "该商家位置信息缺失", Toast.LENGTH_SHORT).show()
+                return@setOnLocationIconClickListener
+            }
+
+            // 跳转到地图页面，传递商家位置信息
+            val intent = Intent(requireContext(), ShopMap::class.java).apply {
+                putExtra("shop_name", shop.name)
+                putExtra("shop_location", shop.location)
+                putExtra("shop_address", "${shop.province} ${shop.city} ${shop.area} ${shop.address}")
+            }
+            startActivity(intent)
         }
     }
 

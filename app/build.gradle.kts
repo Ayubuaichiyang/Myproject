@@ -50,6 +50,10 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.android.flexbox:flexbox:3.0.0")
 
+    // 高德地图SDK依赖
+    implementation("com.amap.api:map2d:latest.integration")
+    implementation("com.amap.api:location:latest.integration")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
