@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- 内容区域 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 第一行：province city area dress（地址） -->
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="浙江省 杭州市 临安区 文三路478号"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <!-- 第二行：name（名称） -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="浙江农林大学（东湖校区）"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- 右侧：定位图标 -->
+    <ImageButton
+        android:id="@+id/ib_location"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:tint="#FF673AB7" />
+
+</LinearLayout>

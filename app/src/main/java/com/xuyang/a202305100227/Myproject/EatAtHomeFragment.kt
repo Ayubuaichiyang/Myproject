@@ -30,8 +30,7 @@ class EatAtHomeFragment : Fragment() {
     private val selectedCookers = mutableSetOf<String>()
     private lateinit var submit_button: Button
     private lateinit var recipe_result_tv: TextView
-    // 新增：加载动画控件
-    private lateinit var loading_pb: ProgressBar
+
 
     // 所有分类数据
     private val categoryList = listOf(
