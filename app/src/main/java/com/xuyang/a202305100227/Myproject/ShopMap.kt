@@ -2,11 +2,12 @@ package com.xuyang.a202305100227.Myproject
 
 import android.Manifest
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -34,17 +35,21 @@ class ShopMap : Activity(), AMap.OnMapClickListener {
     private val LOCATION_PERMISSION_REQUEST_CODE = 1001
     private var isLocationEnabled = false
 
+    // 新增：类级别变量存储商家位置信息，解决作用域问题
+    private var mShopLocation: String = ""
+    private var mShopName: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
         
         // 接收传递的商家信息
-        val shopName = intent?.getStringExtra("shop_name") ?: ""
-        val shopLocation = intent?.getStringExtra("shop_location") ?: ""
+        mShopName = intent?.getStringExtra("shop_name") ?: ""
+        mShopLocation = intent?.getStringExtra("shop_location") ?: ""
         val shopAddress = intent?.getStringExtra("shop_address") ?: ""
         
         initViews()
-        initMap(savedInstanceState, shopName, shopLocation, shopAddress)
+        initMap(savedInstanceState, mShopName, mShopLocation, shopAddress)
     }
 
     /**
@@ -203,7 +208,8 @@ class ShopMap : Activity(), AMap.OnMapClickListener {
         // 设置InfoWindow点击监听器
         aMap?.setOnInfoWindowClickListener { clickedMarker ->
             if (clickedMarker == marker) {
-                Toast.makeText(this, "点击了${shopName}的标记点", Toast.LENGTH_SHORT).show()
+                val uri = Uri.parse("geo:${mShopLocation.replace(",", ",")}?q=${shopName}")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         

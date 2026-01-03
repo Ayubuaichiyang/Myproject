@@ -32,6 +32,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 高德地图 Activity -->
+        <activity
+            android:name=".ShopMap"
+            android:exported="false" />
     </application>
 
 </manifest>
