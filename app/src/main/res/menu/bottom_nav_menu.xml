@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/nav_eat"
-        android:title="吃什么"
+        android:title="今天吃什么"
         android:icon="@android:drawable/ic_menu_today"/>
 
-    <item
-        android:id="@+id/nav_diary"
-        android:title="美食日记"
-        android:icon="@android:drawable/ic_menu_edit"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_diary"-->
+<!--        android:title="美食日记"-->
+<!--        android:icon="@android:drawable/ic_menu_edit"/>-->
 
 </menu>

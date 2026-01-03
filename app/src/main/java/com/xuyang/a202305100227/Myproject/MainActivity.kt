@@ -32,21 +32,21 @@ class MainActivity : AppCompatActivity() {
             bottomNavigation.selectedItemId = R.id.nav_eat
         }
 
-        bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_eat -> {
-                    replaceFragment(EatWhatFragment())
-                    showBottomNavigation()
-                    true
-                }
-                R.id.nav_diary -> {
-                    replaceFragment(FoodDiaryFragment())
-                    showBottomNavigation()
-                    true
-                }
-                else -> false
-            }
-        }
+//        bottomNavigation.setOnItemSelectedListener { item ->
+//            when (item.itemId) {
+//                R.id.nav_eat -> {
+//                    replaceFragment(EatWhatFragment())
+//                    showBottomNavigation()
+//                    true
+//                }
+//                R.id.nav_diary -> {
+//                    replaceFragment(FoodDiaryFragment())
+//                    showBottomNavigation()
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
